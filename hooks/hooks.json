@@ -1,0 +1,54 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/scripts/feature-flow-session-start.py\"",
+            "timeout": 10,
+            "statusMessage": "Restoring feature-flow context"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/scripts/feature-flow-user-prompt.py\"",
+            "timeout": 5,
+            "statusMessage": "Checking feature-flow intent"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "apply_patch|Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/scripts/feature-flow-guard.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking feature-flow gate"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/scripts/feature-flow-stop.py\"",
+            "timeout": 5,
+            "statusMessage": "Checking feature-flow completion"
+          }
+        ]
+      }
+    ]
+  }
+}

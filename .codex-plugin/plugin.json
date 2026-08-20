@@ -1,0 +1,27 @@
+{
+  "name": "feature-flow",
+  "version": "0.1.0",
+  "description": "Flow/spec-based feature work: two lanes, a flow doc with an executable Harness, and receipt-backed verification.",
+  "author": {
+    "name": "SoloZero Labs"
+  },
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Feature Flow",
+    "shortDescription": "Route feature work through the express or flow lane.",
+    "longDescription": "Feature Flow routes existing-codebase feature work into the Express or Flow lane. The Flow lane records a flow doc (Spec/Plan/Harness) and gates verification on a receipt of the Harness commands plus the four git OIDs they ran against.",
+    "developerName": "SoloZero Labs",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions",
+      "Lifecycle hooks"
+    ],
+    "defaultPrompt": [
+      "Use feature-flow for this feature.",
+      "Implement this through the right feature-flow lane.",
+      "Resume the active feature-flow state."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
