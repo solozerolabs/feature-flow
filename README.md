@@ -7,6 +7,15 @@ cannot talk its way past.
 Extracted from the development workflow behind [Syndai](https://syndai.ai). This is the actual
 tooling we use daily, not a demo.
 
+## Hosted: Syndai Coding
+
+feature-flow is the workflow. Syndai Coding is the hosted coding agents that run it for you.
+
+They take a feature from spec to a verified receipt inside your repo, on this same flow. You
+get the checked result and the flow doc, committed alongside your code.
+
+The hosted agents are at [syndai.ai](https://syndai.ai).
+
 ## Why
 
 Coding agents drift: they skip planning, claim "done" without running anything, and lose all
