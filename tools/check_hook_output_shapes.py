@@ -71,6 +71,14 @@ def _fixture_repo() -> str:
 
 
 def main() -> int:
+    """Probe every hook in `PROBES` and fail if any emits a disallowed top-level key.
+
+    Reads the plugin root from ``sys.argv[1]`` (defaulting to ``.``), runs each
+    probed ``scripts/<script>`` against a throwaway fixture repo so no hook reads
+    real state, and prints one ``FAIL:`` line per offending hook. Returns a
+    nonzero exit code if any hook emitted an unaccepted key or none emitted JSON
+    at all.
+    """
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
     repo = _fixture_repo()
     env = {**os.environ, "FEATURE_FLOW_ALLOW_PRIMARY_CHECKOUT": "1"}
