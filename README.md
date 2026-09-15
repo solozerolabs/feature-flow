@@ -76,6 +76,15 @@ the skill instructs the agent to perform itself.
 The agent-facing instructions live in [`skills/feature-flow/SKILL.md`](skills/feature-flow/SKILL.md) —
 that file is the product; read it to understand the whole design.
 
+## Development
+
+Run the project's checks before submitting a change:
+
+```bash
+python3 tools/check_hook_output_shapes.py .   # test suite: hook output shape checks
+ruff check .                                   # lint
+```
+
 ## License
 
 MIT
