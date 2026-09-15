@@ -64,6 +64,14 @@ python3 ~/.local/share/feature-flow/current/scripts/feature-flow-state.py <comma
 Commands: `init <express|flow> "<feature>"`, `set-plan <path>`, `complete <stage>`, `harness`,
 `get`, `clear`, `prune [--apply]`.
 
+## Development
+
+Run the test suite with:
+```bash
+./harness.sh
+```
+There is no separate linter; the CLI is plain Python 3 with no dependencies.
+
 ## Harness support
 
 The mechanism is a CLI plus a committed document, so it works identically on every agent
