@@ -1,3 +1,4 @@
+<!-- no-op validation run for the spine job-per-machine MAX=1 rollout -->
 # feature-flow
 
 A portable, harness-agnostic feature workflow for coding agents: **spec → plan → plan review →
