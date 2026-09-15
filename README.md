@@ -76,6 +76,23 @@ the skill instructs the agent to perform itself.
 The agent-facing instructions live in [`skills/feature-flow/SKILL.md`](skills/feature-flow/SKILL.md) —
 that file is the product; read it to understand the whole design.
 
+## Development
+
+The test suite is `harness.sh`: a self-contained bash script that exercises the state CLI,
+guard hook, and doctor script against throwaway repos under `mktemp`. No real worktree or state
+is ever touched.
+
+```bash
+bash harness.sh
+```
+
+Lint the shell and Python sources:
+
+```bash
+shellcheck harness.sh install.sh
+python3 -m py_compile scripts/*.py tools/*.py
+```
+
 ## License
 
 MIT
