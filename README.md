@@ -76,6 +76,21 @@ the skill instructs the agent to perform itself.
 The agent-facing instructions live in [`skills/feature-flow/SKILL.md`](skills/feature-flow/SKILL.md) —
 that file is the product; read it to understand the whole design.
 
+## Development
+
+The test suite is `harness.sh` — a self-contained bash gate that runs every case in a throwaway
+git repo, no real worktree touched:
+
+```bash
+./harness.sh
+```
+
+The linter checks that every hook emits only Codex-accepted output keys:
+
+```bash
+python3 tools/check_hook_output_shapes.py .
+```
+
 ## License
 
 MIT
